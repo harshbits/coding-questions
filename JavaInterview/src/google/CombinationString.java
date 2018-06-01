@@ -1,7 +1,9 @@
 package google;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 import java.util.regex.Pattern;
 
 //A string consists of ‘0’, ‘1’ and '?'. 
@@ -18,8 +20,12 @@ public class CombinationString {
 		// String input = "????????????";
 		List<String> combinations = combinations(input);
 
+		System.out.println("Using Reccurssion:-");
 		combinations.stream().forEach(System.out::println);
-		
+
+		combinations = combinationsIterative(input);
+		System.out.println("\nUsing Iterative method:-");
+		combinations.stream().forEach(System.out::println);
 	}
 
 	// Method to handle thread safe
@@ -72,6 +78,46 @@ public class CombinationString {
 			print(str, index + 1, length, combinations);
 		}
 	}
-	
+
+	// Method to handle thread safe
+	public static List<String> combinationsIterative(String str) {
+
+		// Check 1
+		if (str == null || str.trim().length() == 0) {
+			return new ArrayList<>();
+		}
+
+		// Check 2, if any invalid characters present
+		if (!Pattern.matches("[01?]+", str)) {
+			throw new RuntimeException("Input String contains invalid characters");
+		}
+
+		// Thread safe
+		List<String> combinations = new ArrayList<>();
+
+		// initialize queue.
+		// We can take stack or set or vector
+		Queue<String> queue = new LinkedList<>();
+		queue.add(str);
+
+		int index;
+
+		while (!queue.isEmpty()) {
+			String current = queue.poll();
+			if ((index = current.indexOf('?')) != -1) {
+				// Replace '?' with '0' and '1' and push it to the Queue
+				for (char ch = '0'; ch <= '1'; ch++) {
+					current = current.substring(0, index) + ch + current.substring(index + 1);
+					// System.out.println(current);
+					queue.add(current);
+				}
+			}
+			// If there is no wildcard pattern found
+			else {
+				combinations.add(current);
+			}
+		}
+		return combinations;
+	}
 
 }
