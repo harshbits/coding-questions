@@ -20,7 +20,6 @@ public class CombinationString {
 
 		combinations.stream().forEach(System.out::println);
 		
-		method2(input);
 	}
 
 	// Method to handle thread safe
