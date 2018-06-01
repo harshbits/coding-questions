@@ -19,6 +19,8 @@ public class CombinationString {
 		List<String> combinations = combinations(input);
 
 		combinations.stream().forEach(System.out::println);
+		
+		method2(input);
 	}
 
 	// Method to handle thread safe
@@ -71,5 +73,6 @@ public class CombinationString {
 			print(str, index + 1, length, combinations);
 		}
 	}
+	
 
 }
