@@ -55,18 +55,23 @@ public class SortLogFiles {
 
 	}
 
-	
 	public static List<String> orderLogLines(int logFileSize, List<String> logLines) {
+
+		// Handle edge case scenarios
+		if (logLines == null || logLines.size() < 2) {
+			return logLines;
+		}
+
 		// As it is immutable list passed,
-		
+
 		// Not required for mutable lists.
 		List<String> logLinesMut = new ArrayList<>(logLines);
-		
-		
+
 		// Variant of merge sort, Tim Sort Algorithm
-		// Timsort is a hybrid stable sorting algorithm, 
-		// derived from merge sort and insertion sort, designed to perform well on many kinds of real-world data
-		
+		// Timsort is a hybrid stable sorting algorithm,
+		// derived from merge sort and insertion sort, designed to perform well on many
+		// kinds of real-world data
+
 		// TIME = O(NlogN)
 		Collections.sort(logLinesMut, (a, b) -> {
 			int i = a.indexOf(" ");
@@ -74,7 +79,7 @@ public class SortLogFiles {
 			String temp1 = a.substring(i + 1);
 			String temp2 = b.substring(j + 1);
 			if (Character.isDigit(a.charAt(i + 1)) && Character.isDigit(b.charAt(j + 1)))
-//				return temp1.compareTo(temp2);
+				// return temp1.compareTo(temp2);
 				return 0;
 			if (Character.isDigit(a.charAt(i + 1)))
 				return temp2.compareTo(temp1);
