@@ -47,12 +47,16 @@ public class MergeBinaryTrees {
 
 		System.out.println(ans);
 	}
+	
+	
 
+	// Commented code helped gain improved performance
+	
 	public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
 
-		if (t1 == null && t2 == null) {
-			return null;
-		}
+//		if (t1 == null && t2 == null) {
+//			return null;
+//		}
 
 		if (t1 == null) {
 			return t2;
@@ -63,7 +67,8 @@ public class MergeBinaryTrees {
 		}
 
 		// Using Recursion= tree traversal = DFS
-		int value = (t1 == null ? 0 : t1.val) + (t2 == null ? 0 : t2.val);
+//		int value = (t1 == null ? 0 : t1.val) + (t2 == null ? 0 : t2.val);
+		int value = t1.val + t2.val;
 
 		TreeNode mergedNode = new TreeNode(value);
 
