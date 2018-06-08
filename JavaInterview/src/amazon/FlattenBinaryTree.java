@@ -6,16 +6,25 @@ public class FlattenBinaryTree {
 
 	public static void main(String[] args) {
 
+		new FlattenBinaryTree().helper();
+
 	}
 
 	// Using Reccursion
 	TreeNode prev = null;
 
-	public void flatten(TreeNode root) {
-		helper(root);
+	public void helper() {
+		TreeNode root = new TreeNode(10);
+		root.left = new TreeNode(12);
+		root.right = new TreeNode(15);
+		root.left.left = new TreeNode(25);
+		root.left.right = new TreeNode(30);
+		root.right.left = new TreeNode(36);
+
+		flatten(root);
 	}
 
-	private void helper(TreeNode node) {
+	private void flatten(TreeNode node) {
 		if (node == null)
 			return;
 		if (prev != null) {
@@ -24,8 +33,8 @@ public class FlattenBinaryTree {
 		}
 		TreeNode temp = node.right; // right will be changed in next recursive calls
 		prev = node;
-		helper(node.left);
-		helper(temp);
+		flatten(node.left);
+		flatten(temp);
 
 	}
 
