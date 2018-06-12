@@ -45,8 +45,18 @@ public class WordSearch {
 //			}
 //		}
 		
-		String word = "ABCCED";
-//		String word = "ABCB";
+//		System.out.println(board[0][1]);
+//		board[0][1] ^= 256;
+//		System.out.println(board[0][1]);
+//		
+//		board[0][1] ^= 256;
+//		System.out.println(board[0][1]);
+		
+//		char a = (char) 'B' ^ 256;
+//		System.out.println(a ^ 256);
+		
+//		String word = "ABCCED";
+		String word = "ABCB";
 		boolean answer = exist(board, word);
 		System.out.println(answer);
 		
@@ -59,14 +69,16 @@ public class WordSearch {
 
 		int col = board[0].length;
 
-		boolean[][] visited = new boolean[row][col];
+		// We can achieve without creating O(N) Extra space
+//		boolean[][] visited = new boolean[row][col];
 		
 		// Time = O( row * col)
 		// For each element of board, try to search pattern
 		for (int i = 0; i < row; i++) {
 			for (int j = 0; j < col; j++) {
 				// Start with index 0
-				return dfsHelper(board, word, i, j, visited, 0);
+//				return dfsHelper(board, word, i, j, visited, 0);
+				return dfsHelper(board, word, i, j, 0);
 			}
 		}
 		return false;
@@ -75,7 +87,7 @@ public class WordSearch {
 	
 	// For adjacency matrix row * col,
 	// Time = O (Row * Col) 
-	private static boolean dfsHelper(char[][] board, String word, int row, int col, boolean[][] visited, int index) {
+	public static boolean dfsHelper(char[][] board, String word, int row, int col, boolean[][] visited, int index) {
 		
 		// termination condition
 		if (index == word.length()) {
@@ -103,6 +115,43 @@ public class WordSearch {
 			
 			// Mark element as unvisited
 			visited[row][col] = false;
+			
+			return result;
+		}
+		return false;
+	}
+	
+	
+	
+	private static boolean dfsHelper(char[][] board, String word, int row, int col, int index) {
+		
+		// termination condition
+		if (index == word.length()) {
+			return true;
+		}
+
+		// Handle edge condition, whether can we move up and down or left and right or not
+		if (row < 0 || col < 0 || row >= board.length || col >= board[0].length) {
+			return false;
+		}
+		
+		// Index of the word
+		char ch = word.charAt(index);
+
+		// if 1, if element is not visited
+		// and 2, character is same as the element
+		if (board[row][col] == ch) {
+			// Bitwise XOR = changed to some special character
+			board[row][col] ^= 256;
+
+			// All possible directions
+			boolean result = dfsHelper(board, word, row + 1, col,  index + 1)
+					|| dfsHelper(board, word, row - 1, col,  index + 1)
+					|| dfsHelper(board, word, row, col + 1,  index + 1)
+					|| dfsHelper(board, word, row, col - 1,  index + 1);
+			
+			// Bitwise XOR = From some special character to back to original number
+			board[row][col] ^= 256;
 			
 			return result;
 		}
