@@ -80,7 +80,7 @@ public class MaximumSubArrayKadane {
 			currentSum = Math.max(currentSum + array[i], array[i]);
 			kadaneMax = Math.max(kadaneMax, currentSum);
 			if (array[i] == max) {
-				startIndex = i;
+				startIndex = i + 1;
 			} else if (max == currentSum) {
 				endIndex = i;
 			}
