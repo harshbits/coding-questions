@@ -93,6 +93,17 @@ public class NumberOfIslands {
 		// left
 		dfsHelper(grid, i, j - 1);
 
+		
+		// We can also add diagonal elements 
+//		dfsHelper(grid, i - 1, j + 1);
+//		
+//		dfsHelper(grid, i + 1, j + 1);
+//		
+//		dfsHelper(grid, i - 1, j - 1);
+//		
+//		dfsHelper(grid, i + 1, j - 1);
+		
+		
 		return 1;
 	}
 	
