@@ -69,8 +69,8 @@ public class WordSearchII {
 					p.next[i] = new TrieNode();
 				}
 				p = p.next[i];
-				p.word = w;
 			}
+			p.word = w;
 		}
 		return root;
 	}
