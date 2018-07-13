@@ -26,13 +26,18 @@ return its level order traversal as:
 public class LevelOrderTraversal {
 
 	public static void main(String[] args) {
-
+		TreeNode tree = new TreeNode(3);
+		tree.left = new TreeNode(9);
+		tree.right = new TreeNode(20);
+		tree.right.left = new TreeNode(15);
+		tree.right.right = new TreeNode(7);
 		
-		
+		List<List<Integer>> ans = levelOrder(tree);
+		System.out.println(ans);
 	}
 
 	// Similar to BFS
-	public List<List<Integer>> levelOrder(TreeNode root) {
+	public static List<List<Integer>> levelOrder(TreeNode root) {
 		List<List<Integer>> result = new LinkedList<>();
 
 		if (root == null) {
