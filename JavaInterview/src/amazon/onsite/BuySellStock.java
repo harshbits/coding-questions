@@ -35,8 +35,8 @@ public class BuySellStock {
 		int maxCur = 0;
 		int maxSofar = 0;
 
-		for (int i = 0; i < prices.length; i++) {
-			maxCur = Math.max(maxCur, maxCur += prices[i] - prices[i - 1]);
+		for (int i =1; i < prices.length; i++) {
+			maxCur = Math.max(0, maxCur += prices[i] - prices[i - 1]);
 			maxSofar = Math.max(maxSofar, maxCur);
 		}
 

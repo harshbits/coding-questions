@@ -19,6 +19,8 @@ public class CountPrime {
 		System.out.println(ans);
 	}
 	
+	
+	// Sieve of Eratosthenes
 	public int countPrimes(int n) {
 		
 //		if (n == 1) {
@@ -43,6 +45,10 @@ public class CountPrime {
 		
 		boolean[] notPrime = new boolean[n];
 		
+//		for(int i=0;i<n;i++)
+//			notPrime[i] = true;
+		
+		// This logic is written based on Sieve of Eratosthenes
 		for (int i = 3; i * i < n; i += 2) {
 			if(notPrime[i]) {
 				continue;
