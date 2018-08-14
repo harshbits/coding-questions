@@ -29,9 +29,9 @@ A[i], B[i] are integers in range [0, 10^5].
 public class AnagramMapping760 {
 	
 	public static void main(String[] args) {
-		int[] A = {12, 28, 46, 32, 50};
-		int[] B = {50, 12, 32, 46, 28};
-		
+		int[] A = { 12, 28, 46, 32, 50 };
+		int[] B = { 50, 12, 32, 46, 28 };
+
 		AnagramMapping760 a = new AnagramMapping760();
 		int[] ans = a.anagramMappings(A, B);
 		System.out.println(Arrays.toString(ans));
