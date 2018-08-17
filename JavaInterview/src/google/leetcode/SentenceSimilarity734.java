@@ -58,6 +58,12 @@ public class SentenceSimilarity734 {
 			return false;
 		}
 		
+		// This logic will fail when there is more than one similarites for single word.
+		// Such as,
+		// [great, nice]
+		// [great, fine]
+		
+		
 //		Map<String, String> pairMap = new HashMap<>();
 //		for (String[] pair : pairs) {
 //			if(pair.length > 0) {
@@ -105,6 +111,7 @@ public class SentenceSimilarity734 {
 				return false;
 			}
 			
+			// If word 1 does not have any similarities.
 			if(!pairInfo.get(words1[i]).contains(words2[i])) {
 				return false;
 			}
