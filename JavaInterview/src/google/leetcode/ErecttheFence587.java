@@ -3,7 +3,9 @@ package google.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -158,6 +160,67 @@ public class ErecttheFence587 {
 		return a.x * b.y - b.x * a.y + b.x * c.y - c.x * b.y + c.x * a.y - c.y * a.x;
 	}
 	
+	
+	
+	
+	// Jarvis March
+	// Total time complexity O (n^2)
+	public List<Point> outerTreesJarvisMarch(Point[] points) {
+
+		Set<Point> result = new HashSet<>();
+		
+		// Find the leftmost point (this is different from left bottom point)
+		Point first = points[0];
+		int firstIndex = 0;
+		for (int i = 1; i < points.length; i++) {
+            if (points[i].x < first.x) {
+                first = points[i];
+                firstIndex = i;
+            }
+        }
+		// Add first point (left most to the answer)
+		result.add(first);
+		
+		Point cur = first;
+		int curIndex = firstIndex;
+
+		do {
+			Point next = points[0];
+			int nextIndex = 0;
+			for (int i = 1; i < points.length; i++) {
+				if (i == curIndex) {
+					continue;
+				}
+				
+				int cross = getSegmentIntersectType(cur, points[i], next);
+				
+				if (nextIndex == curIndex || cross > 0
+						|| (cross == 0 && getDistance(points[i], cur) > getDistance(next, cur))) {
+					next = points[i];
+                    nextIndex = i;
+				}
+			}
+			
+			// Handle collinear points
+			for (int i = 0; i < points.length; i++) {
+				if (i == curIndex)
+					continue;
+				int cross = getSegmentIntersectType(cur, points[i], next);
+				if (cross == 0) {
+					result.add(points[i]);
+				}
+			}
+			cur = next;
+			curIndex = nextIndex;
+
+		}
+		// Terminate condition, while we reach to the first point.
+		while (curIndex != firstIndex);
+		
+		// Return result
+		return new ArrayList<Point>(result);
+	}
+
 	public class Point {
 		int x;
 		int y;
