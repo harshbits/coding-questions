@@ -40,7 +40,6 @@ public class FenwickTree {
 
 	}
 	
-
 	public void update(int i, int val) {
 		// Difference between old and new value
 		int diff = val - nums[i];
