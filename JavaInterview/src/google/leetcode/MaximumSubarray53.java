@@ -28,6 +28,9 @@ public class MaximumSubarray53 {
 		int[] nums = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
 		int ans = m.maxSubArray(nums);
 		System.out.println(ans);
+		
+		ans = m.maxSubArrayConstant(nums);
+		System.out.println(ans);
 	}
 	
 	public int maxSubArray(int[] nums) {
@@ -41,6 +44,22 @@ public class MaximumSubarray53 {
 			max = Math.max(max, dp[i]);
 		}
 
+		return max;
+	}
+	
+	
+	public int maxSubArrayConstant(int [] nums) {
+		int n = nums.length;
+		int max = nums[0];
+		int currentMax = nums[0];
+		
+		for (int i = 1; i < n; i++) {
+			// abhi tak ka max plus current number
+			// and current number. jo bada ho vo
+			currentMax = Math.max(currentMax + nums[i], nums[i]);
+			// if current max greater than max, to new max
+			max = Math.max(currentMax, max);
+		}
 		return max;
 	}
 
