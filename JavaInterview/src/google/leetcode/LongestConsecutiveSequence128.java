@@ -60,4 +60,20 @@ public class LongestConsecutiveSequence128 {
 		
 		return longest;
 	}
+	
+	public boolean isPathWet(int[] rain, int pathLength) {
+
+		if (rain.length != pathLength) {
+			return false;
+		}
+		// store all rain into set
+		Set<Integer> allNums = new HashSet<>(rain.length);
+		Arrays.stream(rain).forEach(n -> allNums.add(n));
+
+		for (int n : rain) {
+
+		}
+
+		return true;
+	}
 }

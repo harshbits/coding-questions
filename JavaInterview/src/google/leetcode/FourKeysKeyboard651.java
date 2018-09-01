@@ -21,7 +21,7 @@ Explanation:
 We can at most get 3 A's on screen by pressing following key sequence:
 A, A, A
 Example 2:
-Input: N = 7
+Input: N = 7his 
 Output: 9
 Explanation: 
 We can at most get 9 A's on screen by pressing following key sequence:
