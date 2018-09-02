@@ -60,7 +60,7 @@ public class RobotRoomCleaner489 {
 //		Set<Integer> set = new HashSet<>();
 		Set<String> set = new HashSet<>();
 		int cur_dir = 0; // 0: up, 90: right, 180: down, 270: left
-		dfsHelper(robot, set, 0, 0, 0);
+		dfsHelper(robot, set, 0, 0, cur_dir);
 	}
 
 	// DFS With memoization and backtracking
@@ -86,20 +86,20 @@ public class RobotRoomCleaner489 {
 				// 0: up, 90: right, 180: down, 270: left
 				// based on the angle of the robot
 				switch (cur_dir) {
-				case 0:
-					x = i - 1;
-					break;
-				case 90:
-					y = j + 1;
-					break;
-				case 180:
-					x = i + 1;
-					break;
-				case 270:
-					y = j - 1;
-					break;
-				default:
-					break;
+					case 0:
+						x = i - 1;
+						break;
+					case 90:
+						y = j + 1;
+						break;
+					case 180:
+						x = i + 1;
+						break;
+					case 270:
+						y = j - 1;
+						break;
+					default:
+						break;
 				}
 
 				dfsHelper(robot, set, x, y, cur_dir);
