@@ -1,4 +1,4 @@
-package google.leetcode;
+package google.leetcode.dp;
 
 /**
  * 
