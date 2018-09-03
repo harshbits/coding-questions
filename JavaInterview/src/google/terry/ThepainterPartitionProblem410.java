@@ -1,5 +1,6 @@
 package google.terry;
 
+import java.util.Arrays;
 
 /**
  * 
@@ -34,7 +35,7 @@ public class ThepainterPartitionProblem410 {
 
 	public static void main(String[] args) {
 		ThepainterPartitionProblem410 t = new ThepainterPartitionProblem410();
-		int k = 2;
+		int k = 3;
 		int[] A = { 10, 20, 30, 40 };
 		System.out.println(t.findMax(A, A.length, k));
 	}
@@ -59,20 +60,18 @@ public class ThepainterPartitionProblem410 {
 			improvedDP[i] = sum[i + 1];
 		}
 		
-		// initialize dp
-		int dp[][] = new int[k + 1][n + 1];
-		
-		// second row, all column values
-		for (int i = 1; i <= n; i++) {
-			dp[1][i] = sum(arr, 0, i - 1);
-			
-		}
-		// first column, all row values
-		for (int i = 1; i <= k; i++) {
-			dp[i][1] = arr[0];
-		}
-		
-	
+//		// initialize dp
+//		int dp[][] = new int[k + 1][n + 1];
+//		
+//		// second row, all column values
+//		for (int i = 1; i <= n; i++) {
+//			dp[1][i] = sum(arr, 0, i - 1);
+//			
+//		}
+//		// first column, all row values
+//		for (int i = 1; i <= k; i++) {
+//			dp[i][1] = arr[0];
+//		}
 		
 
 		// rows = painter count
@@ -97,6 +96,7 @@ public class ThepainterPartitionProblem410 {
 //		}
 //		return dp[k][n];
 		
+		System.out.println(Arrays.toString(improvedDP));
 		// starting from next painter
 		for (int p = 1; p < k; p++) {
 			int[] next = new int[n];
@@ -110,6 +110,7 @@ public class ThepainterPartitionProblem410 {
 			
 			// assign next to dp
 			improvedDP = next;
+			System.out.println(Arrays.toString(improvedDP));
 		}
 		
 		return improvedDP[n - 1];
