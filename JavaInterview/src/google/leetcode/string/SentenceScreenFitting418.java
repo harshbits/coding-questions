@@ -98,7 +98,7 @@ public class SentenceScreenFitting418 {
 		// total words fitted in the screen
 		return words / n;
 	}
-	
+
 	// Brute Force
 	// Time limit exceeded
 	public int wordsTypingBruteForce(String[] sentence, int rows, int cols) {
