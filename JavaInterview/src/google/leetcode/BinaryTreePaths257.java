@@ -2,6 +2,7 @@ package google.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Given a binary tree, return all root-to-leaf paths.
@@ -94,4 +95,30 @@ class TreeNode {
 	TreeNode(int x) {
 		val = x;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		List<String> nodes = new ArrayList<>();
+		printInorder(this, nodes);
+		sb.append("[").append(nodes.stream().collect(Collectors.joining(","))).append("]");
+		return sb.toString();
+	}
+
+	void printInorder(TreeNode node, List<String> nodes) {
+		if (node == null) {
+			nodes.add("null");
+			return;
+		}
+
+		/* first recur on left child */
+		printInorder(node.left, nodes);
+
+		/* then print the data of node */
+		nodes.add(String.valueOf(node.val));
+
+		/* now recur on right child */
+		printInorder(node.right, nodes);
+	}
+	
 }
