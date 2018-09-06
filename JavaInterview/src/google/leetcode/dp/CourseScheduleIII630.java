@@ -1,4 +1,4 @@
-package google.leetcode;
+package google.leetcode.dp;
 
 import java.util.Arrays;
 import java.util.PriorityQueue;
