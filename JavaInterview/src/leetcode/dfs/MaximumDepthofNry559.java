@@ -1,4 +1,4 @@
-package leetcode.dp.dfs;
+package leetcode.dfs;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public class MaximumDepthofNry559 {
 	}
 
 	public int maxDepth(Node root) {
-
+		
 		if (root == null) {
 			return 0;
 		}
