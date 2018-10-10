@@ -32,6 +32,9 @@ public class PartitionLabels763 {
 
 	public List<Integer> partitionLabels(String S) {
 
+		if(S == null || S.length() == 0) {
+			return new ArrayList<>();
+		}
 		char[] sc = S.toCharArray();
 		// O(1) Space
 		// Constant Space
