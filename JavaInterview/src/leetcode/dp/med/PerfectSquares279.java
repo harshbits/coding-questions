@@ -36,10 +36,11 @@ public class PerfectSquares279 {
 			
 			int sq = 1;
 			
+			// multiplication is faster than Square root
 			while (i - sq * sq >= 0) {
 				min = Math.min(min, dp[i - sq * sq] + 1);
 				sq++;
-			}
+			} 
 			
 			dp[i] = min;
 		}
