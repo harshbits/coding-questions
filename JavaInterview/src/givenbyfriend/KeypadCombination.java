@@ -1,4 +1,4 @@
-package google.kasi;
+package givenbyfriend;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,6 +7,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
+
+/**
+ * 
+ * 
+ * @author habhavsar
+ * 
+ * given by Kasi Kikkisetti
+ *
+ */
 public class KeypadCombination {
 
 	private Map<Integer, char[]> keypad = new HashMap<>();
