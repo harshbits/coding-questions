@@ -34,9 +34,37 @@ public class HIndex275 {
 		int[] citations = { 0, 1, 3, 5, 6 };
 		int ans = new HIndex275().hIndex(citations);
 		System.out.println(ans);
+		
+//		ans = new HIndex275().hIndex1(citations);
+//		System.out.println(ans);
 	}
 
+	// o (log n) = > beats 100 % 
 	public int hIndex(int[] citations) {
+
+		if (citations == null || citations.length == 0) {
+			return 0;
+		}
+
+		int len = citations.length;
+		int start = 0;
+		int end = len - 1;
+		int hIndex = 0;
+		while (start <= end) {
+			int mid = start + (end - start) / 2;
+			if (citations[mid] >= len - mid) {
+				hIndex = Math.max(hIndex, len - mid);
+				end = mid - 1;
+			} else {
+				start = mid + 1;
+			}
+		}
+		return hIndex;
+	}
+	
+	
+	//o (log n) => Beats 46 % of the  results
+	public int hIndex1(int[] citations) {
 
 		if (citations == null || citations.length == 0) {
 			return 0;
@@ -58,4 +86,23 @@ public class HIndex275 {
 		}
 		return len - start;
 	}
+	
+	
+	// o (n) => beats 4 % of the results
+//	public int hIndex2(int[] citations) {
+//
+//		if (citations == null || citations.length == 0) {
+//			return 0;
+//		}
+//		int len = citations.length;
+//		int hIndex = 0;
+//		for (int i = 0; i < len; i++) {
+//			if (citations[i] >= len - i) {
+//				hIndex = len - i;
+//				break;
+//			}
+//		}
+//		return hIndex;
+//	}
+
 }
