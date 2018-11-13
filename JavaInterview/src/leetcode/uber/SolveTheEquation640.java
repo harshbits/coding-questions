@@ -86,9 +86,10 @@ public class SolveTheEquation640 {
 					++i;
 				}
 
-				// if not x, increase number
+				// if not x, increase number ( do not confuse number with index)
 				if (i == sc.length || sc[i] != 'x') {
 					supportVar[1] += sign * Integer.parseInt(equation.substring(index, i));
+					// decrease i
 					--i;
 				}
 				// increase coefficient value
