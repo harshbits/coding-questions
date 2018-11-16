@@ -39,16 +39,16 @@ public class LemonadeChange860 {
 				total10++;
 
 			} else {
-//				if (total5 > 0 && total10 > 0) {
-//					total10--;
-//					total5--;
-//				}
-//				else if (total5 >= 3) {
-//					total5 -= 3;
-//				} else {
-//					return false;
-//				}
-////				total20++;
+				if (total5 > 0 && total10 > 0) {
+					total10--;
+					total5--;
+				}
+				else if (total5 >= 3) {
+					total5 -= 3;
+				} else {
+					return false;
+				}
+//				total20++;
 				
 				if (total10 > 0) {
 					
