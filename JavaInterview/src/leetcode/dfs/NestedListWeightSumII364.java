@@ -42,6 +42,7 @@ public class NestedListWeightSumII364 {
 		// formula
 		// 3x + 2y + 1z = (3 + 1) * (x + y + z) - 1x + 2y + 3z
 		
+		// 4x + 4y + 4z - 1x - 2y - 3z = 3x + 2y + 1z
 		int depthSumInverse = (values[0] + 1) * values[1] - depthSum;
 
 		return depthSumInverse;
@@ -54,7 +55,9 @@ public class NestedListWeightSumII364 {
 		for (NestedInteger n : nestedList) {
 			if (n.isInteger()) {
 				sum += n.getInteger() * depth;
+				// Max Depth
 				values[0] = Math.max(values[0], depth);
+				// Flat Sum
 				values[1] += n.getInteger();
 			} else {
 				sum += depthSum(n.getList(), values, depth + 1);
