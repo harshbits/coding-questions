@@ -5,13 +5,10 @@ public class EditDistance {
 	public static void main(String[] args) {
 
 		String word1 = "geek", word2 = "gesek";
-		
 		int ans = new EditDistance().minDistance(word1, word2);
-		
 		System.out.println(ans);
-		
-	}
 
+	}
 	
 	public int minDistance(String word1, String word2) {
 		
