@@ -65,7 +65,7 @@ public class FlattenBinaryTree {
 		TreeNode left;
 		TreeNode right;
 
-		TreeNode(int x) {
+		public TreeNode(int x) {
 			val = x;
 		}
 
