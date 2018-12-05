@@ -1,5 +1,7 @@
 package amazon;
 
+import java.util.Arrays;
+
 // Sum of maximum sub array
 public class KadanesAlgorithm {
 	
@@ -12,8 +14,53 @@ public class KadanesAlgorithm {
 		
 		int ans2 = new KadanesAlgorithm().maxSub(0);
 		System.out.println(ans2);
+		
+		var range = maxSubArrayRange(A);
+		System.out.println(Arrays.toString(range));
+		
+		
+//		//1110110
+//		//0001111
+//		//---------
+//		//0000110
+//		
+//		System.out.println(Integer.toBinaryString(118));
+//		System.out.println(Integer.toBinaryString(15));
+//		
+//		System.out.println(118 & 15);
 	}
 
+
+	public static int[] maxSubArrayRange(int[] A) {
+
+		if (A == null || A.length == 0) {
+			return new int[0];
+		}
+		int n = A.length;
+		int max = A[0];
+		int newSum = A[0];
+
+		int[] range = new int[2];
+
+		for (int i = 1; i < n; i++) {
+
+			newSum += A[i];
+
+			if (newSum > max) {
+				max = newSum;
+				range[1] = i;
+			}
+
+			if (newSum < 0) {
+				newSum = 0;
+				range[0] = i;
+			}
+		}
+
+		return range;
+	}
+	
+	
 	public static int maxSubArray(int[] A) {
 		if (A == null || A.length == 0) {
 			return 0;
