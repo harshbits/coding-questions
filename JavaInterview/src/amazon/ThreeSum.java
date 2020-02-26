@@ -35,6 +35,10 @@ public class ThreeSum {
 		List<List<Integer>> ans = threeSum1(nums, target);
 
 		System.out.println(ans);
+
+		ans = threeSum2(nums, target);
+
+		System.out.println(ans);
 	}
 
 	// 1
@@ -42,6 +46,7 @@ public class ThreeSum {
 
 	// 2
 	// Sorting and merging
+	// beats 86%
 	private static List<List<Integer>> threeSum1(int[] nums, int target) {
 		
 		List<List<Integer>> result = new ArrayList<>();
@@ -101,6 +106,50 @@ public class ThreeSum {
 				// this is also because i is fixed in this inner for-loop
 				else {
 					j++;
+				}
+			}
+		}
+		return result;
+	}
+
+	// 3
+	// Sorting and merging
+	// beats 95%
+	private static List<List<Integer>> threeSum2(int[] nums, int target) {
+		List<List<Integer>> result = new ArrayList<>();
+
+		// O(n log n)
+		Arrays.sort(nums);
+
+		//
+		for (int i = 0; i < nums.length - 2; i++) {
+			if(nums[i] > target){
+				break;
+			}
+
+			if(i == 0 || (i >0 && nums[i] != nums[i-1]) ){
+
+				int low = i + 1;
+				int high = nums.length - 1;
+
+				while(low < high){
+					int sum = nums[i] + nums[low] + nums[high];
+					if(sum == target){
+						result.add(Arrays.asList(nums[i], nums[low], nums[high]));
+						low++;
+						high--;
+						while (low < high && nums[low] == nums[low + 1]){
+							low++;
+						}
+						while (low < high && nums[high] == nums[high - 1]){
+							high--;
+						}
+					}
+					else if(sum > target){
+						high--;
+					}else {
+						low++;
+					}
 				}
 			}
 		}
