@@ -30,6 +30,9 @@ public class ConfusingNumberII {
 
     int[][] mapping = {{0, 0}, {1, 1}, {6, 9}, {8, 8}, {9, 6}};
 
+
+    // Time
+    // space
     public int confusingNumberII(int N) {
         // start with current = 1.
         int[] count = new int[2];

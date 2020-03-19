@@ -122,7 +122,7 @@ public class ReachUsingRopesAndBricks {
             }
         }
 
-//        System.out.println(Arrays.toString(buildings));
+//        System.out.println(Arrays.toString(buildings));x
 //        System.out.println(set);
 
         // O(N) time; N = num of buildings
