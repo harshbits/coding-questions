@@ -74,11 +74,11 @@ public class KeypadCombination {
 		if(digits != null && digits.trim().length() > 0) {
 			helper(ans, digits, "");
 		}
-		
+
 		return ans;
 	}
-	
-	
+
+
 	public List<String> keyPadCombinations(int[] digits) {
 
 		List<String> ans = new ArrayList<>();
@@ -93,7 +93,7 @@ public class KeypadCombination {
 		//
 		//
 		// }
-		
+
 		// Approach 3.
 		// Iterative using Queue (BFS)
 		if (digits !=null && digits.length > 0) {
@@ -102,7 +102,7 @@ public class KeypadCombination {
 
 		return ans;
 	}
-	
+
 	private void helper(List<String> ans, int[] digits, String s, int index) {
 		// Once all digits are done
 		if (digits.length == index) {
@@ -115,8 +115,8 @@ public class KeypadCombination {
 			helper(ans, digits, s + c, index + 1);
 		}
 	}
-	
-	
+
+
 	private void helper(List<String> ans, String digits, String s) {
 
 		// Once all digits are done
@@ -134,25 +134,6 @@ public class KeypadCombination {
 		}
 
 	}
-	
 
-	private List<String> getCombinations(String digits) {
 
-		List<String> ans = new ArrayList<>();
-
-		Queue<String> queue = new LinkedList<>();
-
-		for (int i = 0; i < digits.length(); i++) {
-			
-		}
-		
-		
-		
-		return ans;
-
-	}
-	
-	
-	
-	
 }

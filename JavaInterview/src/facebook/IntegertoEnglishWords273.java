@@ -1,4 +1,4 @@
-package facebook.leetcode;
+package facebook;
 
 public class IntegertoEnglishWords273 {
 
