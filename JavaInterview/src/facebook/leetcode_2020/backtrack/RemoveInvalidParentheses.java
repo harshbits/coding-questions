@@ -26,7 +26,7 @@ public class RemoveInvalidParentheses {
             if (s.charAt(i) == closedParen) {
                 numClosedParen++;
             }
-            if (numClosedParen > numOpenParen) { // We have an extra closed paren we need to remove
+            if (numClosedParen > numOpenParen) { // We have an extra closed parenthesis we need to remove
                 for (int j = jStart; j <= i; j++) {// Try removing one at each position, skipping duplicates
                     if (s.charAt(j) == closedParen && (j == jStart || s.charAt(j - 1) != closedParen))
                         // Recursion: iStart = i since we now have valid # closed parenthesis thru i. jStart = j prevents duplicates
