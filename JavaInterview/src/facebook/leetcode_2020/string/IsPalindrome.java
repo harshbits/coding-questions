@@ -9,6 +9,7 @@ public class IsPalindrome {
         System.out.println(ans);
     }
 
+    // Part 1
     public boolean isPalindrome(String s) {
         if (s == null || s.isEmpty()) {
             return true;
@@ -18,7 +19,6 @@ public class IsPalindrome {
         int end = s.length() - 1;
 
         while (start < end) {
-
             while (start < end && !Character.isLetterOrDigit(s.charAt(start))) {
                 start++;
             }
@@ -35,5 +35,30 @@ public class IsPalindrome {
         }
         return true;
     }
-}
 
+    // Part 2, max we can remove one character
+    public boolean validPalindrome(String s) {
+        int l = 0;
+        int r = s.length() - 1;
+        while (l <= r) {
+            if (s.charAt(l) == s.charAt(r)) {
+                l++;
+                r--;
+            } else {
+                return isPalindrome(s, l, r - 1) || isPalindrome(s, l + 1, r);
+            }
+        }
+        return true;
+    }
+
+    private boolean isPalindrome(String str, int s, int t) {
+        while (s <= t) {
+            if (str.charAt(s) == str.charAt(t)) {
+                s++;
+                t--;
+            } else
+                return false;
+        }
+        return true;
+    }
+}

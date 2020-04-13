@@ -74,7 +74,6 @@ public class ConnectedComponentInGraph {
             } else {
                 parent[parentX] = parent[parentY];
             }
-
         }
     }
 }

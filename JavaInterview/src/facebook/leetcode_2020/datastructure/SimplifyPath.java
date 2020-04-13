@@ -17,7 +17,7 @@ public class SimplifyPath {
             return path;
         }
 
-        Stack<String> stack = new Stack<String>();
+        Stack<String> stack = new Stack<>();
         String[] components = path.split("/");
         StringBuilder sb = new StringBuilder();
 
@@ -33,7 +33,7 @@ public class SimplifyPath {
                     stack.pop();
                 }
             } else {
-                stack.add(directory);
+                stack.push(directory);
             }
         }
 

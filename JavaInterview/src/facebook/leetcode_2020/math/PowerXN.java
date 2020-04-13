@@ -8,6 +8,7 @@ public class PowerXN {
         System.out.println(ans);
     }
 
+    // Time: O(log n)
     public double myPow(double x, int n) {
         if (x == 1 || n == 0) {
             return 1.0;
@@ -16,6 +17,7 @@ public class PowerXN {
             return x;
         }
 
+        // if n is negative
         if (n < 0) {
             n = -n;
             x = 1 / x;
@@ -33,5 +35,21 @@ public class PowerXN {
         }
 
         return ans;
+    }
+
+    public double pow(double x, int n) {
+        if (x == 1 || n == 0) {
+            return 1.0;
+        }
+        if (n == 1) {
+            return x;
+        }
+
+        if (n < 0) {
+            n = -n;
+            x = 1 / x;
+        }
+
+        return (n % 2 == 0) ? pow(x * x, n / 2) : x * pow(x * x, n / 2);
     }
 }

@@ -9,6 +9,7 @@ public class NumberOfDistinctIslands {
 
     }
 
+    // Time:
     public int numDistinctIslands(int[][] grid) {
         // base checks
         if (grid == null || grid.length == 0 || grid[0].length == 0) {
@@ -27,7 +28,6 @@ public class NumberOfDistinctIslands {
         }
         return distinctPatterns.size();
     }
-
 
     private void dfs(int[][] grid, int i, int j, StringBuilder sb, String label) {
         if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == 0) {

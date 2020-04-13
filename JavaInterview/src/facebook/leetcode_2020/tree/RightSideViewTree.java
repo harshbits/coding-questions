@@ -1,7 +1,6 @@
 package facebook.leetcode_2020.tree;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class RightSideViewTree {
 
@@ -48,6 +47,32 @@ public class RightSideViewTree {
 
         dfs(node.right, rightViewList, level + 1);
     }
+
+
+    public List<Integer> rightSideViewBFS(TreeNode root) {
+        if (root == null) {
+            return Collections.emptyList();
+        }
+
+        List<Integer> result = new ArrayList();
+        Queue<TreeNode> que = new LinkedList();
+        que.add(root);
+        while (!que.isEmpty()) {
+            int size = que.size();
+            while (size > 0) {
+                TreeNode node = que.poll();
+                if (size == 1)
+                    result.add(node.val);
+                if (node.left != null)
+                    que.add(node.left);
+                if (node.right != null)
+                    que.add(node.right);
+                size--;
+            }
+        }
+        return result;
+    }
+
 
     public class TreeNode {
         int val;

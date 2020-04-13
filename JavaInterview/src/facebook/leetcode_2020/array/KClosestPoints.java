@@ -13,6 +13,8 @@ public class KClosestPoints {
         System.out.println(Arrays.deepToString(ans));
     }
 
+
+    // Quick sort and select the kth
     public int[][] kClosest(int[][] points, int K) {
         int l = 0;
         int h = points.length - 1;
@@ -47,7 +49,6 @@ public class KClosestPoints {
                 break;
             }
             swap(l, h, points);
-
         }
 
         swap(pivot, h, points);
@@ -141,7 +142,6 @@ public class KClosestPoints {
 
     private class Tuple implements Comparable<Tuple> {
 
-        //        double value;
         int value;
 
         int x;
@@ -156,8 +156,6 @@ public class KClosestPoints {
 
         @Override
         public int compareTo(Tuple that) {
-//            double diff = this.value - that.value;
-//            return diff == 0.0 ? 0 : diff < 0.0 ? -1 : 1;
             return this.value - that.value;
         }
     }

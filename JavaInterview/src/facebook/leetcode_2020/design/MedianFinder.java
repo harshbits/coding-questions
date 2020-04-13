@@ -1,4 +1,4 @@
-package google.leetcode_2020.design;
+package facebook.leetcode_2020.design;
 
 import java.util.Collections;
 import java.util.PriorityQueue;

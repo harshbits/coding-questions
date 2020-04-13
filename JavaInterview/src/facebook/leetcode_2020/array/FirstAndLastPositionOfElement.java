@@ -6,9 +6,9 @@ public class FirstAndLastPositionOfElement {
 
     public static void main(String[] args) {
 
-//        int[] nums = {5, 7, 7, 8, 8, 10};
-        int[] nums = {1};
-        var ans = new FirstAndLastPositionOfElement().searchRange(nums, 1);
+        int[] nums = {5, 7, 7, 8, 8, 10};
+//        int[] nums = {1};
+        var ans = new FirstAndLastPositionOfElement().searchRange(nums, 8);
         System.out.println(Arrays.toString(ans));
 
     }
@@ -43,7 +43,6 @@ public class FirstAndLastPositionOfElement {
         }
         return low;
     }
-
 
     // TLE, not recommended
     // Worst case => o(n)

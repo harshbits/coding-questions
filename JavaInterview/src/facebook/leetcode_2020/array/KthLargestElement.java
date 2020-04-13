@@ -1,6 +1,5 @@
 package facebook.leetcode_2020.array;
 
-import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class KthLargestElement {
@@ -8,12 +7,12 @@ public class KthLargestElement {
     public static void main(String[] args) {
         int[] nums = {3, 2, 1, 5, 6, 4};
         int k = 2;
-        int ans = new KthLargestElement().findKthLargest(nums, k);
+        int ans = new KthLargestElement().findKthLargest2(nums, k);
         System.out.println(ans);
 
         int[] nums1 = {3, 2, 3, 1, 2, 4, 5, 5, 6};
         int k1 = 4;
-        int ans1 = new KthLargestElement().findKthLargest2(nums1, k1);
+        int ans1 = new KthLargestElement().findKthLargest(nums1, k1);
         System.out.println(ans1);
     }
 

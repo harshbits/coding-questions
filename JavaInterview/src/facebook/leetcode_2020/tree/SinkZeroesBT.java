@@ -1,4 +1,4 @@
-package facebook.leetcode_2020.dfs;
+package facebook.leetcode_2020.tree;
 
 import java.util.Stack;
 

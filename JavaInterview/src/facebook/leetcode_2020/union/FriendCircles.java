@@ -1,4 +1,4 @@
-package facebook.leetcode_phone;
+package facebook.leetcode_2020.union;
 
 public class FriendCircles {
 
@@ -37,7 +37,6 @@ public class FriendCircles {
             }
         }
     }
-
 
     // Approach 1. Using Union Set
     public int findCircleNum1(int[][] M) {
@@ -82,6 +81,7 @@ public class FriendCircles {
             parent[data] = data;
         }
 
+        // rank by union
         public void union(int data1, int data2) {
 
             // Step 1. Find parents

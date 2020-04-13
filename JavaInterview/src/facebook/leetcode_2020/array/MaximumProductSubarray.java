@@ -1,4 +1,4 @@
-package facebook.leetcode_phone;
+package facebook.leetcode_2020.array;
 
 public class MaximumProductSubarray {
 
@@ -23,20 +23,6 @@ public class MaximumProductSubarray {
                 maxCurrent = minCurrent;
                 minCurrent = temp;
             }
-
-//            // for negatives
-//            if (nums[i] >= 0) {
-//                minCurrent = Math.min(minCurrent, minCurrent * nums[i]);
-//                maxCurrent = Math.max(minCurrent, maxCurrent * nums[i]);
-//                max = Math.max(max, maxCurrent);
-//            } else {
-//                int temp = maxCurrent;
-//                maxCurrent = minCurrent;
-//                minCurrent = temp;
-//                minCurrent = Math.min(minCurrent, minCurrent * nums[i]);
-//                maxCurrent = Math.max(minCurrent, maxCurrent * nums[i]);
-//                max = Math.max(max, maxCurrent);
-//            }
 
             minCurrent = Math.min(nums[i], minCurrent * nums[i]);
             maxCurrent = Math.max(nums[i], maxCurrent * nums[i]);
