@@ -5,7 +5,6 @@ import java.util.*;
 public class MergeAccounts {
 
     public static void main(String[] args) {
-
     }
 
     // Time Complexity: O(AlogA), where A =∑ai

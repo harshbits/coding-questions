@@ -43,7 +43,6 @@ public class WordBreak {
     // Time:  O(n^2)
     // Space: O(n)
     public boolean wordBreakDP(String s, List<String> wordDict) {
-
         Set<String> dictionary = new HashSet<>(wordDict);
         boolean[] dp = new boolean[s.length() + 1];
         dp[0] = true;
@@ -55,7 +54,6 @@ public class WordBreak {
                 }
             }
         }
-
         return dp[s.length()];
     }
 }

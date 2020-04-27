@@ -65,7 +65,6 @@ public class ShortestDistanceFromAllBuilding {
                 }
             }
         }
-
 //        return pair;
         return shortest == Integer.MAX_VALUE ? -1 : shortest;
     }

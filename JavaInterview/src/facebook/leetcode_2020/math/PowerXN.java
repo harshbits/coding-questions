@@ -3,7 +3,6 @@ package facebook.leetcode_2020.math;
 public class PowerXN {
 
     public static void main(String[] args) {
-
         double ans = new PowerXN().myPow(2, 10);
         System.out.println(ans);
     }
@@ -49,7 +48,6 @@ public class PowerXN {
             n = -n;
             x = 1 / x;
         }
-
         return (n % 2 == 0) ? pow(x * x, n / 2) : x * pow(x * x, n / 2);
     }
 }

@@ -1,12 +1,9 @@
 package facebook.leetcode_2020.greedy;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.PriorityQueue;
 
 public class RearrangeString {
     public static void main(String[] args) {
-
     }
 
     public String reorganizeString(String S) {
@@ -51,7 +48,6 @@ public class RearrangeString {
         return ans.toString();
 
     }
-
 
     private class MultiChar implements Comparable<MultiChar> {
         char letter;

@@ -12,14 +12,13 @@ public class PancakeSort {
         System.out.println(ans);
     }
 
-
     // Steps:
-
     //    Find max
 //    swap max to top
 //    swap max to bottom
 //    reduce size
 //    repeat
+    // Time: O(N^2)
     public List<Integer> pancakeSort(int[] A) {
         List<Integer> flips = new ArrayList<>();
         int n = A.length;
@@ -48,7 +47,7 @@ public class PancakeSort {
             flips.add(maxIndex + 1);
             reverse(A, maxIndex + 1);
 
-            // step 2 (b).
+            // step 4
             //pancake flip the max from the front to the back
             flips.add(n);
             reverse(A, n);
@@ -67,4 +66,3 @@ public class PancakeSort {
         }
     }
 }
-

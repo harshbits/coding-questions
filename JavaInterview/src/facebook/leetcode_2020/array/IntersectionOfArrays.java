@@ -1,6 +1,5 @@
 package facebook.leetcode_2020.array;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class IntersectionOfArrays {

@@ -28,7 +28,6 @@ public class NestedListWeightSum {
         System.out.println(ans);
     }
 
-
     // BFS
     public int depthSum(List<NestedInteger> nestedList) {
 
@@ -53,10 +52,8 @@ public class NestedListWeightSum {
                     queue.addAll(ni.getList());
                 }
             }
-
             level++;
         }
-
         return sum;
     }
 
@@ -77,7 +74,6 @@ public class NestedListWeightSum {
 
         return sum;
     }
-
 
     public class NestedInteger {
 

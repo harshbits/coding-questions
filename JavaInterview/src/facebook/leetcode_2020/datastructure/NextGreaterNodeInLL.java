@@ -55,8 +55,6 @@ public class NextGreaterNodeInLL {
     }
 
 
-
-
     public int[] nextLargerNodes1(ListNode head) {
         if (head == null) {
             return null;

@@ -5,12 +5,10 @@ public class FruitInTheBaskets {
     public static void main(String[] args) {
         int[] tree = {0, 1, 2, 2};
         int ans = new FruitInTheBaskets().totalFruit(tree);
-//        System.out.println(ans);
-
-
+        System.out.println(ans);
     }
 
-
+    // Time: O(N)
     public int totalFruit(int[] tree) {
         if (tree.length <= 2) {
             return tree.length;

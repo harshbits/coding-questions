@@ -3,7 +3,6 @@ package facebook.leetcode_2020.dfs;
 public class NumberOfIslands {
 
     public static void main(String[] args) {
-
     }
 
     private static final char ZERO = '0';
@@ -27,7 +26,6 @@ public class NumberOfIslands {
         }
         return totalIslands;
     }
-
 
     // This is DFS Helper method
     // It will destroy the island while finding for it.

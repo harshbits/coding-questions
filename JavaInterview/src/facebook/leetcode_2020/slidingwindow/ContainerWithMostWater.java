@@ -3,7 +3,6 @@ package facebook.leetcode_2020.slidingwindow;
 public class ContainerWithMostWater {
 
     public static void main(String[] args) {
-
         int[] height = {1,8,6,2,5,4,8,3,7};
         int ans = new ContainerWithMostWater().maxArea(height);
         System.out.println(ans);
@@ -15,7 +14,6 @@ public class ContainerWithMostWater {
         }
         int l = 0, r = height.length - 1,area = 0;
         while (l < r){
-//            area = Math.max(area, Math.min(height[r],height[l]) * (r - l));
             if(height[l] < height[r]){
                 area = Math.max(area, height[l]* (r - l));
                 l++;

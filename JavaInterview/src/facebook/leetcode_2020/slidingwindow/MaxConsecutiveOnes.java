@@ -2,10 +2,8 @@ package facebook.leetcode_2020.slidingwindow;
 
 public class MaxConsecutiveOnes {
 
-
 //    Translation:
 //    Find the longest subarray with at most K zeros.
-
 
 //    Explanation
 //    For each A[j], try to find the longest subarray.

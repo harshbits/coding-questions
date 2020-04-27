@@ -1,14 +1,11 @@
 package facebook.leetcode_2020.array;
 
-import leetcode.uber.MergeIntervals56;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MergeIntervals {
 
+    // Time: O(n log n)
+    // Space: O(1) or O(n)
     public int[][] merge(int[][] intervals) {
         if (intervals.length <= 1)
             return intervals;
@@ -39,7 +36,7 @@ public class MergeIntervals {
             return intervals;
 
         // Sort by ascending starting point using an anonymous Comparator
-        intervals.sort((i1, i2) -> Integer.compare(i1.start, i2.start));
+        intervals.sort(Comparator.comparingInt(i -> i.start));
 
         List<Interval> result = new LinkedList<Interval>();
         int start = intervals.get(0).start;
@@ -65,15 +62,9 @@ public class MergeIntervals {
         int start;
         int end;
 
-        Interval() {
-            start = 0;
-            end = 0;
-        }
-
         Interval(int s, int e) {
             start = s;
             end = e;
         }
-
     }
 }

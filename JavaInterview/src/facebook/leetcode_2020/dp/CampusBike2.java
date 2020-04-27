@@ -1,7 +1,5 @@
 package facebook.leetcode_2020.dp;
 
-import facebook.leetcode_2020.greedy.CampusBikes;
-
 import java.util.Arrays;
 
 public class CampusBike2 {
@@ -64,6 +62,7 @@ public class CampusBike2 {
         return min;
     }
 
+    // Time: O(n * 1<<m * m)
     public int assignBikes1(int[][] workers, int[][] bikes) {
         int n = workers.length;
         int m = bikes.length;
@@ -80,7 +79,7 @@ public class CampusBike2 {
                         continue;
                     }
                     int prev = s ^ (1 << j);
-                    dp[i][s] = Math.min(dp[i - 1][prev] + dis(workers[i - 1], bikes[j]), dp[i][s]) ;
+                    dp[i][s] = Math.min(dp[i - 1][prev] + dis(workers[i - 1], bikes[j]), dp[i][s]);
                     if (i == n) {
                         min = Math.min(min, dp[i][s]);
                     }

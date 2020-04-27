@@ -1,6 +1,5 @@
 package facebook.leetcode_2020.trie;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,13 +85,9 @@ public class StreamChecker {
         return words;
     }
 
-
     class TrieNode {
-
         TrieNode[] children;
-
         boolean isWord;
-
         String word;
 
         public TrieNode() {

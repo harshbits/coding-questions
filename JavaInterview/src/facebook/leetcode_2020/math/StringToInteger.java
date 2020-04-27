@@ -3,19 +3,15 @@ package facebook.leetcode_2020.math;
 public class StringToInteger {
 
     public static void main(String[] args) {
-
         StringToInteger atoi = new StringToInteger();
         System.out.println(atoi.myAtoi("   -42"));
-
     }
 
     private static final char SPACE = ' ';
-
     private static final char PLUS = '+';
     private static final char MINUS = '-';
 
     public int myAtoi(String str) {
-
         //1. Empty string
         if (str.length() == 0) {
             return 0;
@@ -48,7 +44,6 @@ public class StringToInteger {
             total = 10 * total + digit;
             index++;
         }
-
         return sign * total;
     }
 }

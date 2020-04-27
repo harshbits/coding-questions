@@ -3,12 +3,10 @@ package facebook.leetcode_2020.dfs;
 public class IsBipartite {
 
     public static void main(String[] args) {
-
     }
 
     //Time: O (N + E); N = nodes, E = edges
     //Space: O (N + E)
-
     //Our goal is trying to use two colors to color the graph
     // and see if there are any adjacent nodes having the same color.
     public boolean isBipartite(int[][] graph) {

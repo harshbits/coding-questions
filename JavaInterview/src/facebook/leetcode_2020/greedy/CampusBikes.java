@@ -19,6 +19,7 @@ public class CampusBikes {
 
 
     // Time: O(m*n)
+    // Using bucket sort
     public int[] assignBikes(int[][] workers, int[][] bikes) {
 
         int m = workers.length;

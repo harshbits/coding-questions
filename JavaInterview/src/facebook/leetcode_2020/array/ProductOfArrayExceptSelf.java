@@ -6,13 +6,8 @@ public class ProductOfArrayExceptSelf {
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4};
-//        int[] nums = {0, 0};
-//        int[] ans1 = new ProductOfArrayExceptSelf().productExceptSelf1(nums);
-//        System.out.println(Arrays.toString(ans1));
-
         int[] ans2 = new ProductOfArrayExceptSelf().productExceptSelf2(nums);
         System.out.println(Arrays.toString(ans2));
-
         int[] ans3 = new ProductOfArrayExceptSelf().productExceptSelf3(nums);
         System.out.println(Arrays.toString(ans3));
     }
@@ -30,7 +25,6 @@ public class ProductOfArrayExceptSelf {
         for (int i = 1; i < nums.length; i++) {
             mul *= nums[i];
         }
-//        System.out.println(Arrays.toString(ans));
         // divide by nums
         for (int i = 0; i < nums.length; i++) {
             ans[i] = mul / nums[i];
@@ -40,7 +34,7 @@ public class ProductOfArrayExceptSelf {
 
     // Approach 2: Using 2 arrays / without division
     // Time = O(N + N) = O(N)
-    // Space = O (N + N= O(N)
+    // Space = O (N + N) = O(N)
     public int[] productExceptSelf2(int[] nums) {
         int[] ans = new int[nums.length];
         if (nums.length == 0) {
@@ -57,9 +51,6 @@ public class ProductOfArrayExceptSelf {
             leftMul[i] = nums[i - 1] * leftMul[i - 1];
             rightMul[j] = nums[j + 1] * rightMul[j + 1];
         }
-
-//        System.out.println(Arrays.toString(leftMul));
-//        System.out.println(Arrays.toString(rightMul));
 
         // Multiply left and right
         for (int i = 0; i < nums.length; i++) {

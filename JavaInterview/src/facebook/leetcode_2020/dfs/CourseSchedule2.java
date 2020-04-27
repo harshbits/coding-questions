@@ -14,7 +14,6 @@ public class CourseSchedule2 {
         System.out.println(Arrays.toString(ans));
     }
 
-
     // Time: O(N); since we process each node exactly once
     // Space: O(N)
     public int[] findOrder(int numCourses, int[][] prerequisites) {

@@ -5,7 +5,6 @@ import java.util.List;
 
 public class FindKClosestElements {
 
-
     // Time: O(log(n-k)) + O(k)
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
 

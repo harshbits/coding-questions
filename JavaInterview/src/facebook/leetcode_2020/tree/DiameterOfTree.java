@@ -1,8 +1,7 @@
-package facebook.leetcode_2020.trie;
+package facebook.leetcode_2020.tree;
 
 public class DiameterOfTree {
     public static void main(String[] args) {
-
     }
 
     int ans;

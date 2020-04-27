@@ -9,7 +9,6 @@ public class TrapRainWater {
         System.out.println(ans);
     }
 
-
     // O(N) Time
     // O(1) Space
     public int trap(int[] height) {

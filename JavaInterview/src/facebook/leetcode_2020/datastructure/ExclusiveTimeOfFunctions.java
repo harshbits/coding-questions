@@ -15,6 +15,8 @@ public class ExclusiveTimeOfFunctions {
 
     }
 
+    // Time: O (n * s)
+    // Space: O(n)
     public int[] exclusiveTime(int n, List<String> logs) {
         int[] time = new int[n];
         Stack<Integer> stack = new Stack<>();
@@ -39,9 +41,8 @@ public class ExclusiveTimeOfFunctions {
         return time;
     }
 
-
+    // Time: O(s)
     private int[] parse(String log) {
-
         int i = 0;
         // function Id
         int functionId = 0;
@@ -59,5 +60,4 @@ public class ExclusiveTimeOfFunctions {
         }
         return new int[]{functionId, functionIndicator, timestamp};
     }
-
 }

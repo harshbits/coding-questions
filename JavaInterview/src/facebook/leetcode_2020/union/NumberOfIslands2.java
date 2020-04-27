@@ -8,7 +8,6 @@ import java.util.List;
 public class NumberOfIslands2 {
 
     public static void main(String[] args) {
-
         int m = 3, n = 3;
 //        int[][] positions = {{0, 0}, {0, 1}, {1, 2}, {2, 1}, {1, 0}, {0, 2}, {1, 1}};
 //        int[][] positions = {{0, 0}, {0, 1}, {1, 2}, {2, 1}};
@@ -61,15 +60,10 @@ public class NumberOfIslands2 {
         return ans;
     }
 
-
     class UnionFind {
-
         int n;
-
         int totalDisjointSet;
-
         int[] rank;
-
         int[] parent;
 
         public UnionFind(int n) {

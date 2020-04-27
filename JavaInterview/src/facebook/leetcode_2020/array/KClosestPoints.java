@@ -6,15 +6,15 @@ import java.util.PriorityQueue;
 
 public class KClosestPoints {
 
-
     public static void main(String[] args) {
         int[][] points = {{1, 3}, {2, -2}};
         int[][] ans = new KClosestPoints().kClosest(points, 1);
         System.out.println(Arrays.deepToString(ans));
     }
 
-
     // Quick sort and select the kth
+    // Theoretically, the average time complexity is O(N)
+    // but just like quick sort, in the worst case, O(N^2)
     public int[][] kClosest(int[][] points, int K) {
         int l = 0;
         int h = points.length - 1;
@@ -40,17 +40,14 @@ public class KClosestPoints {
             while (l <= h && distance(l, points) <= dpivot) {
                 l++;
             }
-
             while (l <= h && distance(h, points) > dpivot) {
                 h--;
             }
-
             if (l > h) {
                 break;
             }
             swap(l, h, points);
         }
-
         swap(pivot, h, points);
         return h;
     }
@@ -67,6 +64,7 @@ public class KClosestPoints {
     public int distance(int l, int[][] points) {
         return points[l][0] * points[l][0] + points[l][1] * points[l][1];
     }
+
 
 
     public int[][] kClosest2(int[][] points, int K) {

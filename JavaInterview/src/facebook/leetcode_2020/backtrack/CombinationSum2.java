@@ -7,13 +7,14 @@ import java.util.List;
 public class CombinationSum2 {
 
     public static void main(String[] args) {
-
         int[] nums = {10, 1, 2, 7, 6, 1, 5};
         int target = 8;
         var ans = new CombinationSum2().combinationSum2(nums, target);
         System.out.println(ans);
     }
 
+    // Time: (2 ^ N)
+    // Space: (2 ^ N)
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> combinations = new ArrayList<>();
         Arrays.sort(candidates);

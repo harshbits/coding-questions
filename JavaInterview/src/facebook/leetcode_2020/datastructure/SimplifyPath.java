@@ -4,14 +4,14 @@ import java.util.Stack;
 
 public class SimplifyPath {
 
-
     public static void main(String[] args) {
         String path = "/a//b////c/d//././/..";
         String ans = new SimplifyPath().simplifyPath(path);
         System.out.println(ans);
     }
 
-
+    // Time: O(n)
+    // Space: O(n)
     public String simplifyPath(String path) {
         if (path == null || path.trim().isEmpty()) {
             return path;

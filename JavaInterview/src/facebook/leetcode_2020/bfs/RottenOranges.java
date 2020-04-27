@@ -11,16 +11,13 @@ public class RottenOranges {
         // 1 0 1
 //        int[][] grid = {{2, 1, 1}, {0, 1, 1}, {1, 0, 1}};
         int[][] grid = {{2, 2, 2, 1, 1}};
-
         int ans = new RottenOranges().orangesRotting(grid);
-
         System.out.println(ans);
     }
 
-
     private static final int[][] DIRECTIONS = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
-    // // Time: O(m * n)
+    // Time: O(m * n)
     // Space :  O(m * n)
     public int orangesRotting(int[][] grid) {
         if (grid == null || grid.length == 0) {

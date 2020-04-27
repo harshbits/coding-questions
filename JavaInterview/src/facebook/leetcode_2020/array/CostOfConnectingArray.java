@@ -1,6 +1,5 @@
 package facebook.leetcode_2020.array;
 
-import java.util.Collections;
 import java.util.PriorityQueue;
 
 public class CostOfConnectingArray {
@@ -9,11 +8,9 @@ public class CostOfConnectingArray {
         int[] A = {4, 2, 1, 3};
         int ans = new CostOfConnectingArray().connectSticks(A);
         System.out.println(ans);
-
         ans = new CostOfConnectingArray().connectSticks2(A);
         System.out.println(ans);
     }
-
 
     // get maximum of adjacent arrays
     // Time: O(N)

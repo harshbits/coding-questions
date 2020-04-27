@@ -3,7 +3,6 @@ package facebook.leetcode_2020.array;
 public class MaximumProductSubarray {
 
     public static void main(String[] args) {
-
 //        int[] nums = {2, 3, -2, 4};
 //        int[] nums = {-2, 3, -4};
         int[] nums = {-2, 0, -1};
@@ -11,6 +10,8 @@ public class MaximumProductSubarray {
         System.out.println(ans);
     }
 
+    // Time: O(n)
+    // Space: O(1)
     public int maxProduct(int[] nums) {
         int max = nums[0];
         int maxCurrent = nums[0];

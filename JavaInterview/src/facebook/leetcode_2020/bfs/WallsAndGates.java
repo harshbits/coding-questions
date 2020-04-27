@@ -9,7 +9,6 @@ public class WallsAndGates {
     public static void main(String[] args) {
         WallsAndGates w = new WallsAndGates();
 
-
         int[][] rooms = {
                 {INF, -1, 0, INF},
                 {INF, INF, INF, -1},
@@ -98,7 +97,6 @@ public class WallsAndGates {
         if (rooms == null || rooms.length == 0) {
             return;
         }
-
         int m = rooms.length;
         int n = rooms[0].length;
         for (int i = 0; i < m; i++) {

@@ -5,7 +5,6 @@ package facebook.leetcode_2020.array;
 public class KokoEatingBananas {
 
     public static void main(String[] args) {
-
         KokoEatingBananas kb = new KokoEatingBananas();
         int[] wood = {5, 9, 7};
         System.out.println(kb.cutWood(wood, 3));
@@ -14,6 +13,8 @@ public class KokoEatingBananas {
         System.out.println(kb.minEatingSpeed(piles, 5));
     }
 
+    // Time: O(n * log n)
+    // Space: O(1)
     public int minEatingSpeed(int[] piles, int H) {
         if (piles == null || piles.length == 0 || H == 0) {
             return 0;

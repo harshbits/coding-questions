@@ -34,7 +34,6 @@ public class Reader4 {
         return count;
     }
 
-
     private int read4(char[] buf) {
         return 1;
     }

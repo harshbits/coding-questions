@@ -12,8 +12,7 @@ public class Subsets {
         System.out.println(ans);
     }
 
-
-    // Time: O(n log n) +
+    // Time: O(n log n)
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> subsets = new ArrayList<>();
         //Time: O(n log n)
@@ -33,5 +32,4 @@ public class Subsets {
             temp.remove(temp.size() - 1);
         }
     }
-
 }

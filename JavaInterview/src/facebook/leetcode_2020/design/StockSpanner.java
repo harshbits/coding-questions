@@ -16,11 +16,9 @@ public class StockSpanner {
         System.out.println(S.next(85)); //is called and returns 6.
     }
 
-
     //////////////////////////////////////////////
     ///////////////IMPLEMENTATION/////////////////
     //////////////////////////////////////////////
-
 
     private Stack<StockData> stack;
 
@@ -40,7 +38,6 @@ public class StockSpanner {
 
     private class StockData {
         int days;
-
         int price;
 
         public StockData(int days, int price) {

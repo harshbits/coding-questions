@@ -12,7 +12,6 @@ public class AlienDictionary {
                 "rftt"};
         String order = new AlienDictionary().alienOrder(words);
         System.out.println(order);
-
     }
 
     public String alienOrder(String[] words) {
@@ -61,12 +60,6 @@ public class AlienDictionary {
                 }
             }
         }
-
-        // t -> [f]
-        // w -> [e]
-        //
-
-//        System.out.println(map);
 
         Queue<Character> q = new LinkedList<>();
         for (char c : degree.keySet()) {

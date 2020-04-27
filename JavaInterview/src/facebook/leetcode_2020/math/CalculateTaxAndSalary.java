@@ -8,9 +8,7 @@ import java.util.List;
 public class CalculateTaxAndSalary {
 
     public static void main(String[] args) {
-
         new CalculateTaxAndSalary(null).test();
-
     }
 
     private List<TaxBracket> taxBrackets;
@@ -22,7 +20,6 @@ public class CalculateTaxAndSalary {
         taxBrackets.add(new TaxBracket(20000, 0.2));
         taxBrackets.add(new TaxBracket(null, 0.1));
         taxBrackets.add(new TaxBracket(30000, 0.1));
-
 
         CalculateTaxAndSalary tax = new CalculateTaxAndSalary(taxBrackets);
 

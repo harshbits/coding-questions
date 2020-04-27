@@ -15,7 +15,7 @@ public class FriendCircles {
     }
 
     // Approach 2. Using DFS
-
+    // Time: O(n^2)
     public int findCircleNum2(int[][] M) {
         boolean[] visited = new boolean[M.length];
         int friendCircles = 0;
@@ -49,7 +49,6 @@ public class FriendCircles {
             // This will only scan half of the Matrix
             for (int j = 0; j < i + 1; j++) {
                 if (i != j && M[i][j] == 1) {
-//                    System.out.println("union: " + i + ", " + j);
                     uf.union(i, j);
                 }
             }
@@ -57,7 +56,6 @@ public class FriendCircles {
 
         return uf.totalDisjointSet;
     }
-
 
     // Disjoint Set Union /  Union Find
     class UnionFind {
@@ -119,5 +117,4 @@ public class FriendCircles {
             return parent[data];
         }
     }
-
 }

@@ -8,7 +8,6 @@ public class ClosestBinarySearchTreeValue {
     // Time: O(h); h = height
     // Space: O(1)
     public int closestValue(TreeNode root, double target) {
-
         if (root == null) {
             return 0;
         }
@@ -17,7 +16,6 @@ public class ClosestBinarySearchTreeValue {
         while (root != null) {
             if (Math.abs(target - root.val) < Math.abs(target - closest)) {
                 closest = root.val;
-
                 // close enough to the target value,stop search.
                 if (Math.abs(target - root.val) <= 0.5) {
                     break;

@@ -4,13 +4,14 @@ import java.util.Arrays;
 
 public class NextPermutation {
 
-
     public static void main(String[] args) {
         int[] nums = {9, 1, 2, 4, 3, 1, 0};
         new NextPermutation().nextPermutation(nums);
         System.out.println(Arrays.toString(nums));
     }
 
+    // Time: O(N)
+    // Space: O(1)
     public void nextPermutation(int[] nums) {
         if (nums.length < 2) {
             return;
@@ -23,7 +24,7 @@ public class NextPermutation {
         while (inversePoint >= 0 && nums[inversePoint] >= nums[inversePoint + 1]) {
             inversePoint--;
         }
-//        System.out.println(nums[inversePoint]);
+
         // If inverse point is negative then there is no next permutation possible/
         if (inversePoint < 0) {
             reverse(nums, inversePoint + 1);
@@ -36,12 +37,10 @@ public class NextPermutation {
         while (end >= 0 && nums[end] <= nums[inversePoint]) {
             end--;
         }
-//        System.out.println(end);
         swap(nums, inversePoint, end);
 
         // Step 3. Reverse array after inverse point
         reverse(nums, inversePoint + 1);
-//        System.out.println(Arrays.toString(nums));
     }
 
 

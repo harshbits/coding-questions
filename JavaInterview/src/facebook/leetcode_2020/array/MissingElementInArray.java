@@ -8,7 +8,6 @@ public class MissingElementInArray {
         int ans = missingElement(nums, k);
         System.out.println(ans);
 
-
         int[] nums2 = {4, 5, 6, 7, 8};
         System.out.println(missingElement(nums2, 1));
 
@@ -17,14 +16,13 @@ public class MissingElementInArray {
 
     }
 
-    // Time: O(log n)
+    // Time: O(log n), binary search
     // Space: O(1)
     public static int missingElement(int[] nums, int k) {
 
         int low = 0;
         int high = nums.length - 1;
 
-        // missingNum < k, then return nums[n - 1] + k - missingNum
         int missingNum = nums[high] - nums[0] - high;
         if (missingNum < k) {
             return nums[high] + k - missingNum;
@@ -49,7 +47,6 @@ public class MissingElementInArray {
                 low = mid;
             }
         }
-
         return nums[low] + k;
     }
 }

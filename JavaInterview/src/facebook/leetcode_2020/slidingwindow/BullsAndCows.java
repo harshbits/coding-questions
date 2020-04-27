@@ -10,24 +10,9 @@ public class BullsAndCows {
     }
 
     public String getHint(String secret, String guess) {
-
         StringBuilder ans = new StringBuilder();
         int bulls = 0;
         int cows = 0;
-
-//        Set<Character> set = new HashSet<>();
-//        for (int i = 0; i < secret.length(); i++) {
-//            set.add(secret.charAt(i));
-//        }
-//
-//        for (int i = 0; i < secret.length(); i++) {
-//            if(secret.charAt(i) == guess.charAt(i)){
-//                bulls++;
-//            }
-//            else if(set.contains(guess.charAt(i))){
-//                cows++;
-//            }
-//        }
 
         int[] numbers = new int[10];
         for (int i = 0; i < secret.length(); i++) {
@@ -46,7 +31,6 @@ public class BullsAndCows {
                 numbers[g]--;
             }
         }
-
         return ans.append(bulls).append("A").append(cows).append("B").toString();
     }
 }

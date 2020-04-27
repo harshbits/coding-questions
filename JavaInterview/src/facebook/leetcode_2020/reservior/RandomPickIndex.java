@@ -15,6 +15,8 @@ public class RandomPickIndex {
 
     private Random rd;
 
+    // Time: O(n)
+    // Space: O(n)
     public RandomPickIndex(int[] nums) {
         this.nums = nums;
         this.rd = new Random();

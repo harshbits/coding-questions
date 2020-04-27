@@ -1,9 +1,6 @@
 package facebook.leetcode_2020.array;
 
-import java.util.Arrays;
-
 public class IsAlienDictionary {
-
 
     public static void main(String[] args) {
         String[] words = {"hello", "leetcode"};
@@ -29,7 +26,6 @@ public class IsAlienDictionary {
         for (int i = 0; i < order.length(); i++) {
             dictionary[order.charAt(i) - 'a'] = i;
         }
-//        System.out.println(Arrays.toString(dictionary));
         for (int i = 1; i < words.length; i++) {
             if (!compare(words[i - 1], words[i], dictionary)) {
                 return false;
