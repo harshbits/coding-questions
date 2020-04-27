@@ -1,5 +1,6 @@
 package facebook.leetcode_2020.array;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class IntersectionOfArrays {
@@ -138,6 +139,9 @@ public class IntersectionOfArrays {
 
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < nums2.length; i++) {
+            // can use inbuilt binary search
+//            if(Arrays.binarySearch(nums1, nums2[i]) != -1){
+//            }
             if (binarySearch(nums1, nums2[i])) {
                 list.add(nums2[i]);
             }
@@ -173,4 +177,33 @@ public class IntersectionOfArrays {
     // 3.
 
 
+    // Intersection of 3 arrays
+    // Time: O(min(m,n,l))
+    // Space: O(1)
+    // Arrays are strictly sorted
+    public List<Integer> arraysIntersection(int[] arr1, int[] arr2, int[] arr3) {
+        List<Integer> intersection = new ArrayList<>();
+
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        // we only need to pass one array fully.
+        while (i < arr1.length && j < arr2.length && k < arr3.length) {
+            // found a match
+            if (arr1[i] == arr2[j] && arr2[j] == arr3[k]) {
+                intersection.add(arr1[i]);
+                i++;
+                j++;
+                k++;
+            } else if (arr1[i] < arr2[j]) {
+                i++;
+            } else if (arr2[j] < arr3[k]) {
+                j++;
+            } else {
+                k++;
+            }
+        }
+        return intersection;
+    }
 }

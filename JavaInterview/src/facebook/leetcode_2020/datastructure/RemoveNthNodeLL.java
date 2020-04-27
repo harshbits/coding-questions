@@ -14,6 +14,7 @@ public class RemoveNthNodeLL {
         // fast
         ListNode p2 = dummy;
 
+        // Move till n
         while (n-- >= 0) {
             p2 = p2.next;
         }

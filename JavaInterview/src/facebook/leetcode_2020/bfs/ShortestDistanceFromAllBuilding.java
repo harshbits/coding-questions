@@ -15,7 +15,6 @@ public class ShortestDistanceFromAllBuilding {
         ShortestDistanceFromAllBuilding s = new ShortestDistanceFromAllBuilding();
         int ans = s.shortestDistance(grid);
         System.out.println(ans);
-
     }
 
     private static final int[][] DIRECTIONS = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
@@ -58,14 +57,11 @@ public class ShortestDistanceFromAllBuilding {
         // Step 2:
         // find minimum distance
         int shortest = Integer.MAX_VALUE;
-//        Pair pair = new Pair(-1, -1);
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
                 // if empty space and can reachable
                 if (grid[i][j] == 0 && reach[i][j] == buildingNum) {
                     shortest = Math.min(shortest, distance[i][j]);
-//                    pair.x = i;
-//                    pair.y = j;
                 }
             }
         }

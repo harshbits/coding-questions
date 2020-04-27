@@ -30,7 +30,7 @@ public class NextGreaterElementII {
             }
             stack1[++top] = nums[i % n];
 
-            Deque<Integer> stack = new ArrayDeque<>();
+//            Deque<Integer> stack = new ArrayDeque<>();
 //            while (!stack.isEmpty() && stack.peek() <= nums[i % n]) {
 //                stack.pop();
 //            }
