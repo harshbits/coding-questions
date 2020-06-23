@@ -3,7 +3,6 @@ package facebook.leetcode_2020.trie;
 public class WordDictionary {
 
     public static void main(String[] args) {
-
     }
 
     /**

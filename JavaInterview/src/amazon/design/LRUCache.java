@@ -1,4 +1,4 @@
-package amazon;
+package amazon.design;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

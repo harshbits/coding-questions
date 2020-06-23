@@ -1,4 +1,4 @@
-package amazon;
+package amazon.string;
 
 import java.util.ArrayList;
 import java.util.HashMap;

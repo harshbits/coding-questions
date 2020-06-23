@@ -1,4 +1,4 @@
-package amazon;
+package amazon.datastructure;
 
 /**
  * The requirements of the stack are: 1) the stack has a constructor which

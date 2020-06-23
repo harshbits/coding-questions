@@ -1,4 +1,4 @@
-package amazon;
+package amazon.tree;
 
 /**
  * 
@@ -26,10 +26,10 @@ package amazon;
  * @author hbhavsar
  *
  */
-public class LeastCommonAncestorBST {
+public class LeastCommonAncestorBT {
 
 	public static void main(String[] args) {
-		LeastCommonAncestorBST l = new LeastCommonAncestorBST();
+		LeastCommonAncestorBT l = new LeastCommonAncestorBT();
 		l.helper();
 	}
 
@@ -44,37 +44,43 @@ public class LeastCommonAncestorBST {
 		System.out.println(ans);
 	}
 
-	// * Time complexity O(height of tree)
-	// * Space complexity O(height of tree)
+	// * Time complexity O(n)
 	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 		// Validations
 		if (root == null || p == root || q == root) {
 			return root;
 		}
-
-		if (root.val > p.val && root.val > q.val) {
-			return lowestCommonAncestor(root.left, p, q);
-		} else if (root.val < p.val && root.val < q.val) {
-			return lowestCommonAncestor(root.right, p, q);
-		} else {
+		
+		// traverse left side
+		TreeNode left = lowestCommonAncestor(root.left, p, q);
+		// traverse right side
+		TreeNode right = lowestCommonAncestor(root.right, p, q);
+		
+		if (left != null && right != null) {
 			return root;
 		}
+		if (left == null && right == null) {
+			return null;
+		}
+		
+		return left != null ? left : right;
+		
 	}
 
+	public class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
 
-}
-class TreeNode {
-	int val;
-	TreeNode left;
-	TreeNode right;
+		TreeNode(int x) {
+			val = x;
+		}
 
-	public TreeNode(int x) {
-		val = x;
-	}
+		@Override
+		public String toString() {
+			return "TreeNode [val=" + val + ", left=" + left + ", right=" + right + "]";
+		}
 
-	@Override
-	public String toString() {
-		return "TreeNode [val=" + val + ", left=" + left + ", right=" + right + "]";
 	}
 
 }

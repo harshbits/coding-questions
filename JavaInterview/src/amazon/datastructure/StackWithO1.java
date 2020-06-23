@@ -1,4 +1,4 @@
-package amazon;
+package amazon.datastructure;
 
 import java.util.Stack;
 

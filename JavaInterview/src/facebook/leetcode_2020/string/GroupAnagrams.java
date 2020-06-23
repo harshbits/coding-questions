@@ -8,7 +8,7 @@ public class GroupAnagrams {
 
     public static void main(String[] args) {
         String[] strs = { "eat", "tea", "tan", "ate", "nat", "bat" };
-        System.out.println(new amazon.GroupAnagrams().groupAnagrams(strs));
+        System.out.println(new amazon.string.GroupAnagrams().groupAnagrams(strs));
 
     }
 
